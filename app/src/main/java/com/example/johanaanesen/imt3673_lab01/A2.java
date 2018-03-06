@@ -26,7 +26,7 @@ public class A2 extends AppCompatActivity {
 
         if (textFromA1 != ""){
             final TextView T2 = findViewById(R.id.T2);
-            T2.setText(T2.getText() + this.textFromA1);
+            T2.setText("Hello " + this.textFromA1);
         }
     }
 
@@ -43,7 +43,7 @@ public class A2 extends AppCompatActivity {
                 textFromA3 = data.getStringExtra("T4-text");
 
                 final TextView T3 = findViewById(R.id.T3);
-                T3.setText(T3.getText() + this.textFromA3);
+                T3.setText("From A3: " + this.textFromA3);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Handle error?

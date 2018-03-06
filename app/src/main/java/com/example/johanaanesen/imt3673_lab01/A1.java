@@ -29,6 +29,10 @@ public class A1 extends AppCompatActivity {
         EditText editText = findViewById(R.id.T1);
         String text = editText.getText().toString();
 
+        if (text == ""){
+            text = " ";
+        }
+
         Intent intent = new Intent(this, A2.class);
         intent.putExtra("T1-text", text);
         startActivity(intent);

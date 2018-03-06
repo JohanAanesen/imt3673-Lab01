@@ -27,8 +27,12 @@ public class A3 extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        EditText editText = findViewById(R.id.T4);
+        String text = editText.getText().toString();
+
         Intent intent = new Intent(this, A2.class);
-        setResult(Activity.RESULT_CANCELED, intent);
+        intent.putExtra("T4-text", text);
+        setResult(Activity.RESULT_OK, intent);
         finish();
     }
 }

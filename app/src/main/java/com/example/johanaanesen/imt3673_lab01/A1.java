@@ -11,10 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 public class A1 extends AppCompatActivity {
     static final String SPINNER_CHOICE = "spinner-choice";
+    static final String T1_TEXT = "T1-text";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +28,12 @@ public class A1 extends AppCompatActivity {
         EditText editText = findViewById(R.id.T1);
         String text = editText.getText().toString();
 
-        if (text == ""){
+        if (text.equals("")){
             text = " ";
         }
 
         Intent intent = new Intent(this, A2.class);
-        intent.putExtra("T1-text", text);
+        intent.putExtra(T1_TEXT, text);
         startActivity(intent);
     }
 

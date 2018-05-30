@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 public class A2 extends AppCompatActivity {
 
+    static final String T1_TEXT = "T1-text";
+    static final String T4_TEXT = "T4-text";
+
     private String textFromA1;
     private String textFromA3;
 
@@ -21,7 +24,7 @@ public class A2 extends AppCompatActivity {
         //Get text from A1
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            textFromA1 = extras.getString("T1-text");
+            textFromA1 = extras.getString(T1_TEXT);
         }
 
         if (textFromA1 != ""){
@@ -40,7 +43,7 @@ public class A2 extends AppCompatActivity {
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 //Get text from A3
-                textFromA3 = data.getStringExtra("T4-text");
+                textFromA3 = data.getStringExtra(T4_TEXT);
 
                 final TextView T3 = findViewById(R.id.T3);
                 T3.setText("From A3: " + this.textFromA3);

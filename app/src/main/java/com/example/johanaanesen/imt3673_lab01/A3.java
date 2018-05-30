@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 public class A3 extends AppCompatActivity {
 
+    static final String T4_TEXT = "T4-text";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,7 @@ public class A3 extends AppCompatActivity {
         String text = editText.getText().toString();
 
         Intent intent = new Intent(this, A2.class);
-        intent.putExtra("T4-text", text);
+        intent.putExtra(T4_TEXT, text);
         setResult(Activity.RESULT_OK, intent);
         finish();
     }
@@ -30,12 +32,12 @@ public class A3 extends AppCompatActivity {
         EditText editText = findViewById(R.id.T4);
         String text = editText.getText().toString();
 
-        if (text == ""){
+        if (text.equals("")){
             text = " ";
         }
 
         Intent intent = new Intent(this, A2.class);
-        intent.putExtra("T4-text", text);
+        intent.putExtra(T4_TEXT, text);
         setResult(Activity.RESULT_OK, intent);
         finish();
     }
